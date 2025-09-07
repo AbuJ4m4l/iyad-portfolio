@@ -139,11 +139,11 @@ export default function AdminDashboard() {
 
     let endpoint;
     if (item?.originalId) {
-      endpoint = `http://rastan.shop/api/uploads/${
+      endpoint = `https://rastan.shop/api/uploads/${
         item.originalCategory || item.category
       }/${item.originalId}`;
     } else {
-      endpoint = `http://rastan.shop/api/upload/${item.category}`;
+      endpoint = `https://rastan.shop/api/upload/${item.category}`;
     }
 
     xhr.open("POST", endpoint);
@@ -214,7 +214,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     async function fetchTotalViews() {
       try {
-        const response = await fetch("http://rastan.shop/api/visitors/count");
+        const response = await fetch("https://rastan.shop/api/visitors/count");
         if (response.ok) {
           const data = await response.json();
           setTotalViews(Number(data.count ?? 0));
@@ -235,7 +235,7 @@ export default function AdminDashboard() {
 
     async function fetchVisitorsChange() {
       try {
-        const response = await fetch("http://rastan.shop/api/visitors/data", {
+        const response = await fetch("https://rastan.shop/api/visitors/data", {
           headers: {
             "x-api-key": API_KEY,
           },
@@ -293,7 +293,7 @@ export default function AdminDashboard() {
 
     async function fetchShowcasedCount() {
       try {
-        const response = await fetch("http://rastan.shop/api/uploads-count");
+        const response = await fetch("https://rastan.shop/api/uploads-count");
         if (response.ok) {
           const data = await response.json();
           setShowcasedCount(Number(data.totalCount ?? 0));
@@ -323,7 +323,7 @@ export default function AdminDashboard() {
 
     async function fetchContactMessagesAndStats() {
       try {
-        const res = await fetch("http://rastan.shop/api/contact", {
+        const res = await fetch("https://rastan.shop/api/contact", {
           headers: { "x-api-key": API_KEY, "cache-control": "no-cache" },
         });
 

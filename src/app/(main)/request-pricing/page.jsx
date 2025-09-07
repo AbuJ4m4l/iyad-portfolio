@@ -25,7 +25,7 @@ export default function RequestPricingPage() {
   const [dialog, setDialog] = useState({ open: false, title: "", message: "" });
 
   useEffect(() => {
-    fetch("http://rastan.shop/api/visitors", {
+    fetch("https://rastan.shop/api/visitors", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userAgent: navigator.userAgent }),
@@ -38,7 +38,7 @@ export default function RequestPricingPage() {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch("http://rastan.shop/api/contact", {
+      const res = await fetch("https://rastan.shop/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

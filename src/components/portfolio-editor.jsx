@@ -40,7 +40,7 @@ export function PortfolioEditor({ item, onSave, onCancel, setError }) {
     "blEd6yeJCk7WCSQpqPqO7qmKiUjCOabOP2TxJDxpyIomO6FegABNM2a7mHLVlyiky7mXJjR46xr9jUKNDkmYFPs7rCBw2n6CfJ0ba0yu785ghsUXDLwoQWv6toDk3ByU";
 
   const UPLOAD_BASE_URL =
-    process.env.NEXT_PUBLIC_UPLOAD_BASE_URL || "http://rastan.shop";
+    process.env.NEXT_PUBLIC_UPLOAD_BASE_URL || "https://rastan.shop";
 
   useEffect(() => {
     if (item) {

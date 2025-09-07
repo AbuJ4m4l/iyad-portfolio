@@ -64,7 +64,7 @@ export function PortfolioGallery({
     try {
       for (const cat of categories) {
         try {
-          const res = await fetch(`http://rastan.shop/api/uploads/${cat}`);
+          const res = await fetch(`https://rastan.shop/api/uploads/${cat}`);
           if (!res.ok) {
             console.warn(`Failed to fetch category ${cat}: ${res.status}`);
             continue;
@@ -167,7 +167,7 @@ export function PortfolioGallery({
 
     try {
       const response = await fetch(
-        `http://rastan.shop/api/uploads/${itemCategory}/${itemId}`,
+        `https://rastan.shop/api/uploads/${itemCategory}/${itemId}`,
         {
           method: "DELETE",
           headers: {
@@ -313,7 +313,7 @@ export function PortfolioGallery({
                 >
                   <div className="relative overflow-hidden">
                     <img
-                      src={`http://rastan.shop${item.thumbnail || item.after}`}
+                      src={`https://rastan.shop${item.thumbnail || item.after}`}
                       alt="Portfolio thumbnail"
                       className="w-full h-48 object-cover rounded-t-lg transition-transform group-hover:scale-105"
                       onError={(e) => {
@@ -322,7 +322,7 @@ export function PortfolioGallery({
                           e.target.src.includes(item.thumbnail) &&
                           item.after !== item.thumbnail
                         ) {
-                          e.target.src = `http://rastan.shop${item.after}`;
+                          e.target.src = `https://rastan.shop${item.after}`;
                         }
                       }}
                     />
