@@ -139,11 +139,11 @@ export default function AdminDashboard() {
 
     let endpoint;
     if (item?.originalId) {
-      endpoint = `http://localhost:5000/api/uploads/${
+      endpoint = `http://rastan.shop/api/uploads/${
         item.originalCategory || item.category
       }/${item.originalId}`;
     } else {
-      endpoint = `http://localhost:5000/api/upload/${item.category}`;
+      endpoint = `http://rastan.shop/api/upload/${item.category}`;
     }
 
     xhr.open("POST", endpoint);
@@ -214,9 +214,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     async function fetchTotalViews() {
       try {
-        const response = await fetch(
-          "http://localhost:5000/api/visitors/count"
-        );
+        const response = await fetch("http://rastan.shop/api/visitors/count");
         if (response.ok) {
           const data = await response.json();
           setTotalViews(Number(data.count ?? 0));
@@ -237,14 +235,11 @@ export default function AdminDashboard() {
 
     async function fetchVisitorsChange() {
       try {
-        const response = await fetch(
-          "http://localhost:5000/api/visitors/data",
-          {
-            headers: {
-              "x-api-key": API_KEY,
-            },
-          }
-        );
+        const response = await fetch("http://rastan.shop/api/visitors/data", {
+          headers: {
+            "x-api-key": API_KEY,
+          },
+        });
 
         if (!response.ok) {
           console.error("Failed to fetch change:", response.status);
@@ -298,7 +293,7 @@ export default function AdminDashboard() {
 
     async function fetchShowcasedCount() {
       try {
-        const response = await fetch("http://localhost:5000/api/uploads-count");
+        const response = await fetch("http://rastan.shop/api/uploads-count");
         if (response.ok) {
           const data = await response.json();
           setShowcasedCount(Number(data.totalCount ?? 0));
@@ -328,7 +323,7 @@ export default function AdminDashboard() {
 
     async function fetchContactMessagesAndStats() {
       try {
-        const res = await fetch("http://localhost:5000/api/contact", {
+        const res = await fetch("http://rastan.shop/api/contact", {
           headers: { "x-api-key": API_KEY, "cache-control": "no-cache" },
         });
 

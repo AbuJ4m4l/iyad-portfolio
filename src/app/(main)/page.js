@@ -48,7 +48,7 @@ const bebas_Neue = Bebas_Neue({
 
 export default function Home() {
   useEffect(() => {
-    fetch("http://localhost:5000/api/visitors", {
+    fetch("http://rastan.shop/api/visitors", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

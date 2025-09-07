@@ -11,7 +11,7 @@ import React, { useEffect } from "react";
 
 export default function services() {
   useEffect(() => {
-    fetch("http://localhost:5000/api/visitors", {
+    fetch("http://rastan.shop/api/visitors", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

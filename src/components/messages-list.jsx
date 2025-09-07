@@ -15,7 +15,7 @@ import { MessageSquare, Search, Archive } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
-const API_URL = "http://localhost:5000/api/contact";
+const API_URL = "http://rastan.shop/api/contact";
 const API_KEY =
   "blEd6yeJCk7WCSQpqPqO7qmKiUjCOabOP2TxJDxpyIomO6FegABNM2a7mHLVlyiky7mXJjR46xr9jUKNDkmYFPs7rCBw2n6CfJ0ba0yu785ghsUXDLwoQWv6toDk3ByU";
 

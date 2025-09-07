@@ -318,8 +318,8 @@ const ProjectHoverOverlay = ({ project, onClose }) => {
 
     if (beforeFile && afterFile) {
       setBeforeAfterMedia({
-        before: `http://localhost:5000${beforeFile.url}`,
-        after: `http://localhost:5000${afterFile.url}`,
+        before: `http://rastan.shop${beforeFile.url}`,
+        after: `http://rastan.shop${afterFile.url}`,
         beforeType: getMediaType(beforeFile.filename),
         afterType: getMediaType(afterFile.filename),
       });
@@ -330,7 +330,7 @@ const ProjectHoverOverlay = ({ project, onClose }) => {
     if (isMobile && files.length > 0) {
       const f = files[0];
       setSelectedMedia({
-        url: `http://localhost:5000${f.url}`,
+        url: `http://rastan.shop${f.url}`,
         type: getMediaType(f.filename),
         filename: f.filename,
       });
@@ -346,7 +346,7 @@ const ProjectHoverOverlay = ({ project, onClose }) => {
         : "image";
 
     setSelectedMedia({
-      url: `http://localhost:5000${file.url}`,
+      url: `http://rastan.shop${file.url}`,
       type: getMediaType(file.filename),
       filename: file.filename,
     });
@@ -484,7 +484,7 @@ const ProjectHoverOverlay = ({ project, onClose }) => {
               >
                 {isVideo ? (
                   <video
-                    src={`http://localhost:5000${file.url}`}
+                    src={`http://rastan.shop${file.url}`}
                     className={
                       isShorts
                         ? "w-full h-40 object-contain rounded"
@@ -495,7 +495,7 @@ const ProjectHoverOverlay = ({ project, onClose }) => {
                   />
                 ) : (
                   <img
-                    src={`http://localhost:5000${file.url}`}
+                    src={`http://rastan.shop${file.url}`}
                     className={
                       isShorts
                         ? "w-full h-40 object-contain rounded"
@@ -629,13 +629,13 @@ const CategorySection = ({ title, projects, emptyMessage, isShorts }) => {
               const media = thumbnailFile
                 ? {
                     type: "image",
-                    url: `http://localhost:5000${thumbnailFile.url}`,
+                    url: `http://rastan.shop${thumbnailFile.url}`,
                     filename: thumbnailFile.filename,
                   }
                 : videoFile
                 ? {
                     type: "video",
-                    url: `http://localhost:5000${videoFile.url}`,
+                    url: `http://rastan.shop${videoFile.url}`,
                     filename: videoFile.filename,
                   }
                 : null;
@@ -720,7 +720,7 @@ export default function Services() {
 
   useEffect(() => {
     try {
-      fetch("http://localhost:5000/api/visitors", {
+      fetch("http://rastan.shop/api/visitors", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -749,7 +749,7 @@ export default function Services() {
           categories.map(async (category) => {
             try {
               const res = await fetch(
-                `http://localhost:5000/api/uploads/${category.name}`
+                `http://rastan.shop/api/uploads/${category.name}`
               );
               const data = await res.json();
               if (data && data.success) {

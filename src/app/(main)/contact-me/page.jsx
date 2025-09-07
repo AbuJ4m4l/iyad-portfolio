@@ -31,7 +31,7 @@ export default function ContactMePage() {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/visitors", {
+    fetch("http://rastan.shop/api/visitors", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userAgent: navigator.userAgent }),
@@ -44,7 +44,7 @@ export default function ContactMePage() {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch("http://rastan.shop/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
